@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SmartHomeActivity">
+
+    <TextView
+        android:id="@+id/smathome_sensor_temperatura_humidade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="Sensor de Tempeartura e Humidade"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/smathome_temperatura"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Temperatura"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/smathome_indice_temperatura"
+        app:layout_constraintStart_toStartOf="@+id/smathome_sensor_temperatura_humidade"
+        app:layout_constraintTop_toBottomOf="@+id/smathome_sensor_temperatura_humidade" />
+
+    <TextView
+        android:id="@+id/smathome_indice_temperatura"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Índice de Temperatura"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/smarthome_humidade"
+        app:layout_constraintStart_toEndOf="@id/smathome_temperatura"
+        app:layout_constraintTop_toTopOf="@id/smathome_temperatura" />
+
+    <TextView
+        android:id="@+id/smarthome_humidade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Humidade"
+        android:textAlignment="textEnd"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/smathome_sensor_temperatura_humidade"
+        app:layout_constraintStart_toEndOf="@id/smathome_indice_temperatura"
+        app:layout_constraintTop_toTopOf="@id/smathome_temperatura" />
+
+    <TextView
+        android:id="@+id/smarthome_mostra_temperatura"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="TextView"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/smathome_temperatura"
+        app:layout_constraintStart_toStartOf="@+id/smathome_temperatura"
+        app:layout_constraintTop_toBottomOf="@+id/smathome_temperatura"
+        tools:text="27 °C" />
+
+    <TextView
+        android:id="@+id/smarthome_mostra_indice_temperatura"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/smathome_indice_temperatura"
+        app:layout_constraintStart_toStartOf="@+id/smathome_indice_temperatura"
+        app:layout_constraintTop_toTopOf="@+id/smarthome_mostra_temperatura"
+        tools:text="30 °C" />
+
+    <TextView
+        android:id="@+id/smarthome_mostra_humidade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="textEnd"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/smarthome_humidade"
+        app:layout_constraintStart_toStartOf="@+id/smarthome_humidade"
+        app:layout_constraintTop_toTopOf="@+id/smarthome_mostra_indice_temperatura"
+        tools:text="60%" />
+
+    <View
+        android:id="@+id/smarthome_sensor_humidade_divisor"
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/smarthome_mostra_temperatura" />
+
+    <TextView
+        android:id="@+id/smarthome_caixa_de_agua"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Caixa d'água"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/smarthome_sensor_humidade_divisor" />
+
+    <TextView
+        android:id="@+id/smarthome_agua_nivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Nível"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/smarthome_mostra_nivel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/smarthome_caixa_de_agua" />
+
+    <TextView
+        android:id="@+id/smarthome_mostra_nivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="viewEnd"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/smarthome_agua_nivel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/smarthome_agua_nivel"
+        tools:text="70%" />
+
+    <View
+        android:id="@+id/smarthome_sensor_nivel_divisor"
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/smarthome_mostra_nivel" />
+
+    <TextView
+        android:id="@+id/smarthome_porta_da_frente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Porta da Frente"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/smarthome_sensor_nivel_divisor" />
+
+    <TextView
+        android:id="@+id/smarthome_mostra_porta_da_frente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/smarthome_porta_da_frente"
+        tools:text="Trancada" />
+
+    <Button
+        android:id="@+id/smarthome_button_destrancar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Destrancar/Trancar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/smarthome_mostra_porta_da_frente" />
+
+    <View
+        android:id="@+id/smarthome_porta_divisor"
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/smarthome_button_destrancar" />
+
+    <TextView
+        android:id="@+id/smarthome_lampada_rgb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Lampada RGB"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/smarthome_porta_divisor" />
+
+    <TextView
+        android:id="@+id/smarhome_Led_vermelho"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Vermelho"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@id/smarhome_Led_verde"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/smarhome_Led_verde" />
+
+    <TextView
+        android:id="@+id/smarhome_Led_verde"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Verde"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/smarhome_Led_azul"
+        app:layout_constraintStart_toEndOf="@+id/smarhome_Led_vermelho"
+        app:layout_constraintTop_toBottomOf="@+id/smarthome_lampada_rgb" />
+
+    <TextView
+        android:id="@+id/smarhome_Led_azul"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Azul"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/smarhome_Led_verde"
+        app:layout_constraintTop_toTopOf="@+id/smarhome_Led_verde" />
+
+    <EditText
+        android:id="@+id/smarthome_configura_vermelho"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="100"
+        android:inputType="number"
+        android:maxLength="3"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/smarhome_Led_vermelho"
+        app:layout_constraintStart_toStartOf="@+id/smarhome_Led_vermelho"
+        app:layout_constraintTop_toBottomOf="@+id/smarhome_Led_verde" />
+
+    <EditText
+        android:id="@+id/smarthome_configura_verde"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="100"
+        android:inputType="number"
+        android:maxLength="3"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/smarhome_Led_verde"
+        app:layout_constraintStart_toEndOf="@+id/smarhome_Led_vermelho"
+        app:layout_constraintTop_toTopOf="@+id/smarthome_configura_vermelho" />
+
+    <EditText
+        android:id="@+id/smarthome_configura_azul"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="100"
+        android:inputType="number"
+        android:maxLength="3"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/smarhome_Led_azul"
+        app:layout_constraintStart_toEndOf="@+id/smarhome_Led_verde"
+        app:layout_constraintTop_toTopOf="@+id/smarthome_configura_verde" />
+
+    <Button
+        android:id="@+id/button_smathome_configura_led"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Enviar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/smarthome_configura_verde" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
